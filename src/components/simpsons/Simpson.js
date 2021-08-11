@@ -1,4 +1,4 @@
-import './Simpsoncss.css'
+import './Simpson.css'
 
 export default function Simpson(props) {
     let {name, surname, age, info, photo} = props;
