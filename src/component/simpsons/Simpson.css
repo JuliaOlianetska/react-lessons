@@ -1,0 +1,20 @@
+
+.allSimpsons {
+    padding: 10px;
+    background: bisque;
+}
+.simpsonsFamily {
+    display: flex;
+    column-gap: 30px;
+}
+
+img {
+    max-height: 300px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+p {
+    text-align: justify;
+    color: brown;
+}
