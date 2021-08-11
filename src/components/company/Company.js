@@ -1,4 +1,4 @@
-import "../css.css"
+import "../cw-lesson1.css"
 
 export default function Company(props) {
     let {name, catchPhrase, bs} = props;

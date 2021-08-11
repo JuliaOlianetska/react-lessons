@@ -1,4 +1,4 @@
-import "../css.css"
+import "../cw-lesson1.css"
 
 export default function Geo(props) {
     let {lat, lng} = props;

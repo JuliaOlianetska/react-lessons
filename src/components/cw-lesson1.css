@@ -1,0 +1,29 @@
+.users {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.user {
+    background: pink;
+    border: 5px solid #282c34;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    width: 40%;
+}
+
+.address {
+    background: brown;
+}
+
+.company {
+    background: bisque;
+}
+
+h4 {
+    margin-top: 10px;
+    margin-bottom: 2px;
+}
+p {
+    margin: 1px;
+}

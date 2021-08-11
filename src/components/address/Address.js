@@ -1,5 +1,5 @@
 import Geo from "../geo/Geo";
-import "../css.css"
+import "../cw-lesson1.css"
 
 export default function Address(props) {
     let {street, suite, city, zipcode, geo} = props;
