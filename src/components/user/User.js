@@ -13,7 +13,7 @@ export default function User({someUser}) {
 
 
   return (
-    <div>
+    <div className={'user-info'}>
       {someUser.id} - {someUser.name}, email: {someUser.email}
       <h5>User's posts</h5>
       <Posts items={posts}/>
