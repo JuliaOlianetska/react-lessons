@@ -1,5 +1,9 @@
 
-.user-info {
+.user-info h4 {
     margin-top: 20px;
     background: pink;
+}
+
+.post-title h6 {
+    background: #7272bd;
 }

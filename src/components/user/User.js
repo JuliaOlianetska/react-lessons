@@ -1,6 +1,8 @@
 import {useEffect, useState} from "react";
 import {getPostsOfUser} from "../../user.service";
 import Posts from "../posts/Posts";
+import "../style.css";
+
 
 export default function User({someUser}) {
 
@@ -14,7 +16,8 @@ export default function User({someUser}) {
 
   return (
     <div className={'user-info'}>
-      {someUser.id} - {someUser.name}, email: {someUser.email}
+
+        <h4>{someUser.id} - {someUser.name}, email: {someUser.email}</h4>
       <h5>User's posts</h5>
       <Posts items={posts}/>
     </div>

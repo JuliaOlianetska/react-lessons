@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {getCommentsOfPost} from "../../user.service";
 import Comments from "../comments/Comments";
+import "../style.css";
 
 export default function Post({somePost}) {
 
@@ -12,9 +13,10 @@ export default function Post({somePost}) {
 
 
   return (
-    <div>
+    <div className={'post-title'}>
 
-        {somePost.id} - {somePost.title}
+      <h6>{somePost.id} - {somePost.title}</h6>
+<h5>Comments: </h5>
 <Comments comments={comments}/>
     </div>
   );
