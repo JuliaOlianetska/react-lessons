@@ -9,4 +9,8 @@ let url = 'https://jsonplaceholder.typicode.com/users';
         return fetch(url + '/' + id + '/posts').then(value => value.json())
     }
 
-    export {getUsers, getPostsOfUser}
+    const getPost = (id) => {
+        return fetch('https://jsonplaceholder.typicode.com/posts/' + id)
+            .then(value => value.json())
+    }
+    export {getUsers, getPostsOfUser, getPost}

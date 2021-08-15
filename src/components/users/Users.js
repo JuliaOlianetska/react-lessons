@@ -1,5 +1,5 @@
 import {useEffect, useState} from "react";
-import {getPostsOfUser, getUsers} from "../../service/user.service";
+import {getPost, getPostsOfUser, getUsers} from "../../service/user.service";
 import User from "../user/User";
 import Post from "../post/Post";
 
@@ -20,6 +20,9 @@ const buttonUser = (userDet) => {
             getPostsOfUser(userDet.id).then(value => {
                 setPosts([...value]);
             })
+    getPost(post.id).then(value => {
+        setPost({...post})
+    })
     }
 
     return (
