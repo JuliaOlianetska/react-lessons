@@ -1,55 +1,57 @@
 import {useEffect, useState} from "react";
-import {getPost, getPostsOfUser, getUsers} from "../../service/user.service";
+import {getPostsOfUser, getUsers} from "../../service/user.service";
 import User from "../user/User";
 import Post from "../post/Post";
+import "../style.css"
+
 
 export default function Users() {
 
-   let [users, setUsers] = useState([]);
-let [user, setUser] = useState({});
-let [posts, setPosts] = useState([]);
-let [post, setPost] = useState({});
+    let [users, setUsers] = useState([]);
+    let [user, setUser] = useState({});
+    let [posts, setPosts] = useState([]);
+
 
     useEffect(() => {
-getUsers().then(value => setUsers([...value]))
+        getUsers().then(value => setUsers([...value]))
     }, [])
 
 
-const buttonUser = (userDet) => {
+    const buttonUser = (userDet) => {
         setUser({...userDet});
-            getPostsOfUser(userDet.id).then(value => {
-                setPosts([...value]);
-            })
-    getPost(post.id).then(value => {
-        setPost({...post})
-    })
+        getPostsOfUser(userDet.id).then(value => {
+            setPosts([...value]);
+
+        })
+
+
     }
 
     return (
-    <div>
-        <div>{
-            users.map(itemUser => <User key={itemUser.id} someUser={itemUser}
-                                        buttonUser={buttonUser}
-            />)
-        }
-        </div>
-        <div>
-            {
-                posts.map(onePost => <Post postOfUser={onePost}
-                buttonUser={buttonUser}
+        <div className={'wrap'}>
+            <div className={'users'}>{
+                users.map(itemUser => <User key={itemUser.id} someUser={itemUser}
+                                            buttonUser={buttonUser}
                 />)
 
             }
+            </div>
+
+            {user && (<div className={'user-details'}>
+                {JSON.stringify(user.name)}
+                {JSON.stringify(user.username)}
+
+            </div>)}
+
+            <div className={'posts'}>{
+                posts.map(postOfUser => <Post key={postOfUser.id} postOfUser={postOfUser}
+                                              buttonUser={buttonUser}
+                />)
+
+            }
+            </div>
+
+
         </div>
-
-        {user && (<div>
-            {JSON.stringify(user.name)}
-            {JSON.stringify(user.username)}
-            {JSON.stringify(post.id)}
-        </div>)}
-
-
-
-    </div>
-  );
+    );
 }

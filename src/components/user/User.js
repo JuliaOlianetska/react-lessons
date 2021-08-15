@@ -5,11 +5,12 @@ export default function User({someUser, buttonUser}) {
         buttonUser(someUser);
     }
 
-
     return (
     <div>
-        id: {someUser.id}, name: {someUser.name}
-        <button onClick={onClickButton}>details</button>
+
+            id {someUser.id}, name: {someUser.name}
+            <button onClick={onClickButton}>details</button>
+
     </div>
   );
 }

@@ -1,11 +1,13 @@
-export default function Post(buttonUser, postOfUser) {
+export default function Post({postOfUser, buttonUser}) {
+
     const onClickButton = () => {
-        buttonUser(postOfUser)
+        buttonUser(postOfUser);
     }
         return (
 
     <div>
-        {postOfUser.id}
+
+        {postOfUser.id} {postOfUser.title}
 
     </div>
   );
