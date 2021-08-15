@@ -6,3 +6,10 @@
     width: 50%;
 
 }
+h5, p {
+    margin: 0;
+
+}
+button {
+    margin: 0;
+}

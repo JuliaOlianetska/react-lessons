@@ -5,6 +5,7 @@ export default function App() {
   return (
     <div>
     <Posts/>
+        <h4>Comments: </h4>
 <Comments/>
 
     </div>

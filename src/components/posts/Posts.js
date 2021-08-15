@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
-import {getPosts} from "../../service";
+import {getCommentsOfPost, getPosts} from "../../service";
 import Post from "../post/Post";
 import "../style.css"
-import Comments from "../comments/Comments";
+
 
 
 export default function Posts() {
@@ -16,6 +16,7 @@ let [post, setPost] = useState({});
 
     const postDetails = (details) => {
         setPost({...details});
+
     }
 
   return (
@@ -38,9 +39,8 @@ let [post, setPost] = useState({});
             {JSON.stringify(post.body)}
         </div>)
         }
-        <div>
-            <Comments/>
-        </div>
+
+
 
 
     </div>
