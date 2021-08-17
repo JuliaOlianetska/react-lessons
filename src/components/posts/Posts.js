@@ -3,6 +3,7 @@ import {getCommentsOfPost, getPosts} from "../../service";
 import Post from "../post/Post";
 import "../style.css"
 import Comments from "../comments/Comments";
+import PostDetails from "../postsDetails/PostDetails";
 
 
 
@@ -38,6 +39,7 @@ let [post, setPost] = useState(null);
                 <p>post body:</p>
             }
             {JSON.stringify(post.body)}
+
             <Comments/>
         </div>)
         }

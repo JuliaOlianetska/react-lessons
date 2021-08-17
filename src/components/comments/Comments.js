@@ -1,5 +1,7 @@
+
 import {useEffect, useState} from "react";
-import {getComments, getCommentsOfPost} from "../../service";
+
+import {getCommentsOfPost} from "../../service";
 import Comment from "../comment/Comment";
 import "../style.css"
 
@@ -15,11 +17,17 @@ let [comments, setComments] = useState([]);
 
   return (
     <div className={'wrap'}>
+        <button>Comments</button>
             <div>
-             <Comments/>
+
+                {
+                    comments.map(oneComment => <Comment key={oneComment.id} oneComment={oneComment}/>)
+                }
+
+
             </div>
 
-            <button>Comments</button>
+
 
 
 

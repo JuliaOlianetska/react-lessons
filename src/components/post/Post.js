@@ -1,7 +1,12 @@
+import {useEffect, useState} from "react";
+import {getCommentsOfPost} from "../../service";
+
 export default function Post({onePost, postDetails}) {
 
+    
     const onClickPostDetails = () => {
         postDetails(onePost);
+
 
     }
   return (
@@ -10,6 +15,8 @@ export default function Post({onePost, postDetails}) {
         <div className={'button'}>
             <button onClick={onClickPostDetails}>Details</button>
         </div>
+
+
     </div>
   );
 }

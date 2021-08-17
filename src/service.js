@@ -9,8 +9,8 @@ const getComments = () => {
     return fetch('https://jsonplaceholder.typicode.com/comments').then (value => value.json())
 };
 
-const getCommentsOfPost = (id) => {
-    return fetch( ulrPost +'/' + id + '/comments')
+const getCommentsOfPost = (postId) => {
+    return fetch( ulrPost +'/' + postId + '/comments').then(value => value.json())
 }
  export {getPosts,getComments, getCommentsOfPost};
 
