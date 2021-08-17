@@ -1,0 +1,8 @@
+.item-car {
+    display: flex;
+    flex-wrap: wrap;
+}
+.item-car > div {
+    width: 10%;
+    border: #282c34 solid 10px;
+}
