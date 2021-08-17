@@ -7,12 +7,13 @@ export default function Cars() {
   let [cars, setCars] = useState([]);
 
   useEffect(() => {
-    getCars().then (value => setCars([value]))
+    getCars().then (value => setCars(value))
   }, [])
 
 
   return (
     <div>
+
         {
             cars.map(oneCar => <Car key={oneCar.id} oneCar={oneCar}/>)
         }
