@@ -14,7 +14,7 @@ export default function Cars() {
   return (
     <div>
         {
-            cars.map(value =>  <Car oneCar={value}/>)
+            cars.map(oneCar => <Car key={oneCar.id} oneCar={oneCar}/>)
         }
     </div>
   );

@@ -13,7 +13,9 @@ const saveCar = (car) => {
 
 
 const getCars = () => {
-    fetch('http://195.72.146.25/api/v1/cars').then (value => value.json())
+
+    return fetch('http://195.72.146.25/api/v1/cars').then (value => value.json())
+    console.log(getCars)
 }
 
 
