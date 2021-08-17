@@ -1,16 +1,17 @@
 import {useEffect, useState} from "react";
+import {getCars} from "../../services/car.service";
 
 export default function Cars() {
 
 let [cars, setCars] = useState([]);
 
 useEffect(() => {
-  setCars([...value])
+  getCars().then (value => setCars( [value]))
 }, []);
 
   return (
     <div>
-
+cars
 
     </div>
   );
