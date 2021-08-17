@@ -16,10 +16,12 @@ let [post, setPost] = useState(null);
         getPosts(). then (value => setPosts([...value]))
     }, [])
 
+
     const postDetails = (details) => {
         setPost({...details});
 
     }
+
 
   return (
     <div className={'wrap'}>
@@ -39,8 +41,7 @@ let [post, setPost] = useState(null);
                 <p>post body:</p>
             }
             {JSON.stringify(post.body)}
-
-            <Comments/>
+            <PostDetails detail={'onePost'}/>
         </div>)
         }
 
