@@ -22,13 +22,13 @@ let [post, setPost] = useState({});
   return (
     <div className={'wrap'}>
 
-        <div>
+        <div className={'all-posts'}>
             {
             posts.map(onePost => <Post key={onePost.id} onePost={onePost} postDetails={postDetails}/>)
         }
         </div>
         {post &&
-        (<div>
+        (<div className={'post-details'}>
             {
                 <p>post id:</p>
             }
@@ -37,8 +37,12 @@ let [post, setPost] = useState({});
                 <p>post body:</p>
             }
             {JSON.stringify(post.body)}
+            {
+                <button>Comments</button>
+            }
         </div>)
         }
+
 
 
 
