@@ -6,18 +6,18 @@ import Comment from "../comment/Comment";
 import "../style.css"
 
 
-export default function Comments() {
+export default function Comments({allComments, commentsDisplay}) {
 
 let [comments, setComments] = useState([]);
 
-    useEffect(() => {
-        getCommentsOfPost().then(value => setComments([...value]))
-    }, [])
+const commentsButton = () => {
+    commentsDisplay(allComments)
 
+};
 
   return (
-    <div className={'wrap'}>
-        <button>Comments</button>
+    <div>
+        <button onClick={commentsButton}>Comments</button>
             <div>
 
                 {

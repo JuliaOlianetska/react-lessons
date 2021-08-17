@@ -1,21 +1,20 @@
 import {useEffect, useState} from "react";
 import {getCommentsOfPost} from "../../service";
-import Comment from "../comment/Comment";
+
 
 export default function Post({onePost, postDetails}) {
-
-    
-    const onClickPostDetails = () => {
-        postDetails(onePost);
-
-
-    }
 
     let [comments, setComments] = useState([]);
 
     useEffect(() => {
         getCommentsOfPost(onePost.id).then(value => setComments([...value]))
     }, [onePost.id])
+
+    const onClickPostDetails = () => {
+        postDetails(onePost);
+    }
+
+
 
 
 
