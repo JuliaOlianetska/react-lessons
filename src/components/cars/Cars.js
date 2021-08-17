@@ -2,12 +2,13 @@ import {useEffect, useState} from "react";
 import {getCars} from "../../services/car.service";
 import Car from "../car/Car";
 
-export default function Cars() {
+export default function Cars({cars}) {
 
   return (
     <div>
-<Car key={car.id} />
-
+        {
+            cars.map(value => oneCar  )
+        }
     </div>
   );
 }
