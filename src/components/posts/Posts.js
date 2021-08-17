@@ -2,13 +2,14 @@ import {useEffect, useState} from "react";
 import {getCommentsOfPost, getPosts} from "../../service";
 import Post from "../post/Post";
 import "../style.css"
+import Comments from "../comments/Comments";
 
 
 
 export default function Posts() {
 
   let [posts, setPosts] = useState([]);
-let [post, setPost] = useState({});
+let [post, setPost] = useState(null);
 
     useEffect(() => {
         getPosts(). then (value => setPosts([...value]))
@@ -37,9 +38,7 @@ let [post, setPost] = useState({});
                 <p>post body:</p>
             }
             {JSON.stringify(post.body)}
-            {
-                <button>Comments</button>
-            }
+            <Comments/>
         </div>)
         }
 
