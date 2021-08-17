@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import {getCars} from "../../services/service.cars";
 import Car from "../car/Car";
+import "../style.css"
 
 export default function Cars() {
 
@@ -12,7 +13,7 @@ export default function Cars() {
 
 
   return (
-    <div>
+    <div className={'all-cars'}>
         {
             cars.map(oneCar => <Car key={oneCar.id} oneCar={oneCar}/>)
         }

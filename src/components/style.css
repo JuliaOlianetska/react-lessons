@@ -1,8 +1,13 @@
-.item-car {
+.all-cars {
+    margin-left: 10px;
     display: flex;
     flex-wrap: wrap;
+    column-gap: 10px;
 }
-.item-car > div {
-    width: 10%;
+
+.item-car {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 20%;
     border: #282c34 solid 10px;
 }
