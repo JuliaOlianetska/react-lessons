@@ -18,4 +18,15 @@ let getCars = () => {
     return fetch(carUrl). then(value => value.json());
 }
 
-export {addCar, getCars};
+let deleteCar = (id) => {
+    return fetch(carUrl + '/' + id, {
+        method: 'DELETE',
+    }). then(value => '')
+
+}
+
+
+
+
+
+export {addCar, getCars, deleteCar};
