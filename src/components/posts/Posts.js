@@ -25,6 +25,7 @@ export default function Posts() {
     }
     const displayComments = (comment) => {
         setComment({...comment})
+        console.log(comments);
     };
 
 
@@ -36,10 +37,15 @@ export default function Posts() {
                     posts.map(onePost => <Post key={onePost.id} onePost={onePost} postDetails={postDetails}/>)
                 }
             </div>
+            <div>
+
+        </div>
             {post &&
-            <Comments post={post} comments={comments} displayCommentsDetails={displayComments}/>
+            <Comments post={post} comments={comments} displayComments={displayComments}/>
             }
 
         </div>
+
+
     );
 }

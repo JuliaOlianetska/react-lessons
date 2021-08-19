@@ -17,9 +17,10 @@ export default function Comments({post,displayComments}) {
 
 
     const onClickCommentsButton = () => {
-        displayComments(comment);
-        console.log(comments)
+        displayComments(comment)
+        console.log(comment)
     }
+
 const displayCommentsDetails = (comment) => {
         setComment({...comment})
 };
