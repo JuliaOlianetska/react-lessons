@@ -20,7 +20,9 @@ export default function Comments({post}) {
         setComment({...comment});
         console.log(comments)
     }
-
+const displayCommentsDetails = (comment) => {
+        setComment({...comment})
+};
 
         return (
         <div className={'post-details'}>
@@ -38,12 +40,14 @@ export default function Comments({post}) {
             <button onClick={onClickCommentsButton}>COMMENTS</button>
 
             <div>{
-                comments.map(oneComment => <Comment oneComment={oneComment}/>)
+                comments.map(oneComment => <Comment oneComment={oneComment} displayCommentsDetails={displayCommentsDetails}/>)
             }</div>
 
 
             <div>
-                {JSON.stringify(comment.name)}
+                {JSON.stringify(comment.id)}
+                {JSON.stringify(comment.email)}
+                {JSON.stringify(comment.body)}
             </div>
         </div>
 

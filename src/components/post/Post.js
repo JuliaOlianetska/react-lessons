@@ -1,7 +1,6 @@
 import {useEffect, useState} from "react";
 import {getCommentsOfPost} from "../../service";
-import Comments from "../comments/Comments";
-import DetailsOfPost from "../details-of-post/DetailsOfPost";
+
 import "../style.css"
 
 export default function Post({onePost, postDetails}) {
@@ -22,8 +21,7 @@ export default function Post({onePost, postDetails}) {
         <div className={'button'}>
             <button onClick={onClickPostDetails}>Details</button>
         </div>
-<div>
-</div>
+
 
     </div>
   );
