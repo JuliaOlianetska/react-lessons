@@ -1,14 +1,11 @@
-export default function Comment({oneComment,commentDetails}) {
+export default function Comment({oneComment}) {
 
-  const commentsDetailsOnClick = () => {
-    commentDetails(oneComment);
-    console.log(oneComment)
-  }
+
   return (
+
     <div>
 
       <p>{oneComment.id} {oneComment.name}</p>
-<button onClick={commentsDetailsOnClick}>DETAILS</button>
     </div>
   );
 }

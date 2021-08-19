@@ -1,12 +1,13 @@
 import {useEffect, useState} from "react";
-import {getCommentsOfPost, getPosts} from "../../service";
+import {getPosts} from "../../service";
 import Post from "../post/Post";
 import "../style.css"
+
 import Comments from "../comments/Comments";
 
 
 
-export default function Posts() {
+export default function Posts() {  
 
     let [posts, setPosts] = useState([]);
     let [post, setPost] = useState(null);
@@ -20,13 +21,10 @@ export default function Posts() {
     const postDetails = (details) => {
         setPost({...details});
 
+    }
 
 
-    }
-    const commentsDisplay = (post) => {
-        console.log({...post});
-        getCommentsOfPost(post.id).then(value => setComments([...value]))
-    }
+
 
     return (
         <div className={'wrap'}>
@@ -37,21 +35,8 @@ export default function Posts() {
                 }
             </div>
             {post &&
-            (<div className={'post-details'}>
-                {
-                    <p>post id:</p>
-                }
-                {JSON.stringify(post.id)}
-                {
-                    <p>post body:</p>
-                }
-                {JSON.stringify(post.body)}
-
-                <Comments allComments={comments} commentsDisplay={commentsDisplay}/>
-
-            </div>)
+            <Comments post={post} comments={comments}/>
             }
-
 
         </div>
     );
