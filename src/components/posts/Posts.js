@@ -12,6 +12,7 @@ export default function Posts() {
     let [posts, setPosts] = useState([]);
     let [post, setPost] = useState(null);
     let [comments, setComments] = useState([]);
+    let [comment, setComment] = useState({});
 
     useEffect(() => {
         getPosts().then(value => setPosts([...value]))
@@ -22,8 +23,9 @@ export default function Posts() {
         setPost({...details});
 
     }
-
-
+    const displayComments = (comment) => {
+        setComment({...comment})
+    };
 
 
     return (
@@ -35,7 +37,7 @@ export default function Posts() {
                 }
             </div>
             {post &&
-            <Comments post={post} comments={comments}/>
+            <Comments post={post} comments={comments} displayCommentsDetails={displayComments}/>
             }
 
         </div>

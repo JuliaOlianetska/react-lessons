@@ -5,7 +5,7 @@ import {useEffect, useState} from "react";
 import {getCommentsOfPost} from "../../service";
 import "../style.css"
 
-export default function Comments({post}) {
+export default function Comments({post,displayComments}) {
 
     let [comment,setComment] = useState({});
     let [comments, setComments] = useState([]);
@@ -16,8 +16,8 @@ export default function Comments({post}) {
     }, [post.id])
 
 
-    const onClickCommentsButton = (comment) => {
-        setComment({...comment});
+    const onClickCommentsButton = () => {
+        displayComments(comment);
         console.log(comments)
     }
 const displayCommentsDetails = (comment) => {
