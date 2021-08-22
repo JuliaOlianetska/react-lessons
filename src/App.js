@@ -12,7 +12,7 @@ export default function App() {
     <div>
       <Link to={'/cars'}>to cars page</Link>
 
-      <Route path={'/cars'} render={<Cars/>}></Route>
+      <Route path={'/cars'} render={()=> Cars}></Route>
 
     </div>
       </Router>
