@@ -5,16 +5,19 @@ import {
     Link,
     withRouter
 } from "react-router-dom";
+import Cars from "./components/Cars";
+import Form from "./components/Form";
 
 export default function App() {
-  return (
-      <Router>
-    <div>
-      <Link to={'/cars'}>to cars page</Link>
-
-      <Route path={'/cars'} render={()=> Cars}></Route>
-
-    </div>
-      </Router>
-  );
+    return (
+        <Router>
+            <div>
+                <Link to={'/cars'}>to cars page</Link>
+                <br/>
+                <Link to={'/create-car'}>create car</Link>
+                <Route path={'/cars'} render={() => <Cars/>}/>
+                <Route path={'/create-car'} render={() => <Form/>}/>
+            </div>
+        </Router>
+    );
 }
