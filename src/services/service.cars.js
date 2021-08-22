@@ -21,7 +21,7 @@ const getCars = () => {
 const deleteCar = (id) => {
     return fetch(carUrl +'/' + id, {
         method: 'DELETE',
-        body: JSON.stringify(id),
+        body: JSON.stringify(),
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
         },
@@ -30,8 +30,8 @@ const deleteCar = (id) => {
 
 }
 
-const editCar = (car) => {
-    return fetch(carUrl +'/' + car.id, {
+const editCar = (car, id) => {
+    return fetch(carUrl +'/' + id, {
         method: 'PUT',
         body: JSON.stringify(car),
         headers: {
@@ -39,6 +39,7 @@ const editCar = (car) => {
         },
     }).then((response) => response.json())
         .then((json) => console.log(json));
+    console.log('editcar')
 
 }
 
