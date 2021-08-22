@@ -1,6 +1,6 @@
-let carUrl = 'http://195.72.146.25/api/v1/cars';
+let carUrl = 'http://91.201.233.14/api/v1/cars';
 
-let addCar = (car) => {
+const addCar = (car) => {
     fetch(carUrl, {
         method: 'POST',
         body: JSON.stringify(car),
@@ -14,19 +14,34 @@ let addCar = (car) => {
 
 
 
-let getCars = () => {
+const getCars = () => {
     return fetch(carUrl). then(value => value.json());
 }
 
-let deleteCar = (id) => {
-    return fetch(carUrl + '/' + id, {
+const deleteCar = (id) => {
+    return fetch(carUrl +'/' + id, {
         method: 'DELETE',
-    }). then(value => '')
+        body: JSON.stringify(id),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    }).then((response) => response.json())
+        .then((json) => console.log(json));
+
+}
+
+const editCar = (car) => {
+    return fetch(carUrl +'/' + car.id, {
+        method: 'PUT',
+        body: JSON.stringify(car),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+        },
+    }).then((response) => response.json())
+        .then((json) => console.log(json));
 
 }
 
 
 
-
-
-export {addCar, getCars, deleteCar};
+export {addCar, getCars, deleteCar, editCar};

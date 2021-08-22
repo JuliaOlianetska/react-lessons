@@ -3,7 +3,7 @@ import {addCar} from "../../services/service.cars";
 export default function Form() {
     
     let onFormSubmit =(e) => {
-        e.preventDefault();
+
         console.log(e.target.model.value);
         console.log(e.target.price.value);
         console.log(e.target.year.value);

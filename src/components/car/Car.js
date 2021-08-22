@@ -1,13 +1,16 @@
 import "../style.css"
+import {findAllByDisplayValue} from "@testing-library/react";
 
 
-export default function Car({oneCar, carButtonDelete}) {
+export default function Car({oneCar, carButtonDelete, carButtonEdit}) {
 
     const onClickDelete = () => {
-        carButtonDelete(oneCar);
+        carButtonDelete(oneCar.id);
         console.log(onClickDelete);
     }
 const onClickEdit = () => {
+
+        carButtonEdit(oneCar.id)
     console.log(onClickEdit);
 }
 
@@ -18,6 +21,8 @@ const onClickEdit = () => {
             <p>{oneCar.year} year, {oneCar.price} USD</p>
             <button onClick={onClickDelete}>delete</button>
             <button onClick={onClickEdit}>edit</button>
+
+            <div></div>
         </div>
     );
 }
