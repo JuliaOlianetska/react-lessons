@@ -7,7 +7,7 @@ const getCars = () => {
 
 
 const createCar = (car) => {
-    fetch('urlCars', {
+    fetch(urlCars, {
         method: 'POST',
         body: JSON.stringify(car),
         headers: {

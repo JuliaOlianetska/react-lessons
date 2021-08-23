@@ -1,11 +1,15 @@
+import {createCar} from "../services";
+
 export default function Form() {
 
 const onClickSave = (e) => {
+    e.preventDefault();
     console.log(e.target.model.value);
     console.log(e.target.price.value);
     console.log(e.target.year.value);
     let carToSave = {model: e.target.model.value, price: e.target.price.value, year: e.target.year.value}
-console.log(carToSave)
+    console.log(carToSave);
+    createCar(carToSave);
 }
 
 
