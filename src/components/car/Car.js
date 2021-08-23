@@ -10,8 +10,7 @@ export default function Car({oneCar, carButtonDelete, carButtonEdit}) {
     }
 const onClickEdit = () => {
 
-        carButtonEdit(oneCar.id)
-    console.log(onClickEdit);
+        carButtonEdit(oneCar);
 }
 
 

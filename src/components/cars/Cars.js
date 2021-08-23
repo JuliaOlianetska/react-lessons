@@ -19,20 +19,6 @@ export default function Cars() {
     let [price, setPrice] = useState('');
     let [year, setYear] = useState('');
 
-    let onModelChange =(e) => {
-        console.log(e.target.value);
-
-        setModel(e.target.value);
-    }
-    let onPriceChange =(e) => {
-        console.log(e.target.value);
-        setPrice(e.target.value);
-    }
-    let onYearChange =(e) => {
-        console.log(e.target.value);
-
-        setYear(e.target.value);
-    }
 
 
     let [cars, setCars] = useState([]);
@@ -48,10 +34,25 @@ const carButtonDelete = (id) => {
     setCars([...filterCarsArray]);
     console.log(filterCarsArray)
 }
-    const carButtonEdit = (id) => {
-        editCar(id).then(value => console.log(...value));
+
+
+    const carButtonEdit = (car) => {
+        console.log(car);
+
+    }
+        let onModelChange =(e) => {
+            console.log(e.target.value);
+            setModel(e.target.value);
     }
 
+    let onPriceChange =(e) => {
+        console.log(e.target.value);
+        setPrice(e.target.value);
+    }
+    let onYearChange =(e) => {
+        console.log(e.target.value);
+        setYear(e.target.value);
+    }
 
   return (
       <div>
