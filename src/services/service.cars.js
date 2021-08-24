@@ -30,16 +30,20 @@ const deleteCar = (id) => {
 
 }
 
-const editCar = (id) => {
-    return fetch('http://91.201.233.14/api/v1/cars/' + id, {
+const editCar = (id, model, price, year) => {
+    return fetch(carUrl + '/' + id, {
         method: 'PUT',
-        body: JSON.stringify(),
+        body: JSON.stringify({
+            model: model,
+            price: price,
+            year: year,
+        }),
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
         },
-    }).then((response) => response.json())
+    })
+        .then((response) => response.json())
         .then((json) => console.log(json));
-
 }
 
 

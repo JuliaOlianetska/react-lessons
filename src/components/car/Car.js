@@ -1,5 +1,4 @@
 import "../style.css"
-import {findAllByDisplayValue} from "@testing-library/react";
 
 
 export default function Car({oneCar, carButtonDelete, carButtonEdit}) {
@@ -9,7 +8,7 @@ export default function Car({oneCar, carButtonDelete, carButtonEdit}) {
         console.log(onClickDelete);
     }
 const onClickEdit = () => {
-
+console.log(oneCar)
         carButtonEdit(oneCar);
 }
 
@@ -21,7 +20,6 @@ const onClickEdit = () => {
             <button onClick={onClickDelete}>delete</button>
             <button onClick={onClickEdit}>edit</button>
 
-            <div></div>
         </div>
     );
 }
