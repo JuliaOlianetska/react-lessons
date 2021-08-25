@@ -38,6 +38,7 @@ export default function Form2({eachCar}) {
                 <button>UPDATE</button>
             </form>
 
+
         </div>
     );
 }

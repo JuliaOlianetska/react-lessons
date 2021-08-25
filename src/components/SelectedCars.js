@@ -56,8 +56,7 @@ const putModelToIn = (e) => {
                 ))}
 
         </select>
-        <p>{value}</p>
-        <p>{model}</p>
+        <p>{value}</p>>
         <form>
             <input type="text" name={'model'} value={value}/>
             <input type="text" name={'model'} value={value}/>
