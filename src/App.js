@@ -18,10 +18,8 @@ export default function App() {
 <Link to={'/user-page'}>user page</Link>
 
         </div>
-        <Route exact path={'/user-page'} component={Users}/>
-        <Route path={'/user-page/:id'} render={()=>{
-        return <StaticUserDetails/>}
-        }/>
+        <Route path={'/user-page'} component={Users}/>
+
       </Router>
   );
 }

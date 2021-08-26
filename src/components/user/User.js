@@ -10,7 +10,7 @@ import {
 export default function User({eachUser}) {
   return (
     <div>
-        {eachUser.name} - <Link to={'/user-page/' + eachUser.id}>user details</Link>
+        {eachUser.name} - <Link to={{pathname: '/user-page/' + eachUser.id, state: eachUser}}>user details</Link>
 
     </div>
   );
