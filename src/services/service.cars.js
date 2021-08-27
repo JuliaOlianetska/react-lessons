@@ -1,25 +1,23 @@
 let carUrl = 'http://91.201.233.14/api/v1/cars';
 
 const addCar = (car) => {
-    fetch(carUrl, {
+    return fetch(carUrl, {
         method: 'POST',
         body: JSON.stringify(car),
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
         },
     })
-        .then((response) => response.json())
-        .then((json) => console.log(json));
+        .then(() => getCars())
 };
 
 
-
 const getCars = () => {
-    return fetch(carUrl). then(value => value.json());
+    return fetch(carUrl).then(value => value.json());
 }
 
 const deleteCar = (id) => {
-    return fetch(carUrl +'/' + id, {
+    return fetch(carUrl + '/' + id, {
         method: 'DELETE',
         body: JSON.stringify(),
         headers: {
@@ -36,16 +34,13 @@ const editCar = (id, model, price, year) => {
         body: JSON.stringify({
             model: model,
             price: price,
-            year: year,
+            year: year
         }),
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
         },
-    })
-        .then((response) => response.json())
-        .then((json) => console.log(json));
+    }).then(() => getCars())
 }
-
 
 
 export {addCar, getCars, deleteCar, editCar};
