@@ -58,20 +58,24 @@ const carButtonDelete = (id) => {
         setModel(oneCar.model)
         setPrice(oneCar.price)
         setYear(oneCar.year)
-            editCar(id).then(value => console.log(carButtonEdit))
 
 }
+
+
+        let carToEdit = {model: e.target.model.value || car.model, price: e.target.price.value || car.price, year: e.target.year.value || car.year, id: car.id}
+    console.log(carToEdit)
+    editCar(carToEdit)
 
 
 
   return (
       <div>
-          <form  onSubmit={onFormSubmit}>
+          <form onSubmit={onFormSubmit}>
               <input type="text" name={'model'} value={model} onChange={onModelChange} placeholder={'model'}/>
               <input type="number" name={'price'} value={price} onChange={onPriceChange}/>
               <input type="number" name={'year'} value={year} onChange={onYearChange}/>
               <button>SAVE</button>
-              <button>EDIT</button>
+
           </form>
           <div className={'all-cars'}>
               {

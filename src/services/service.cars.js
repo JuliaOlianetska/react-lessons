@@ -28,18 +28,15 @@ const deleteCar = (id) => {
 
 }
 
-const editCar = (id, model, price, year) => {
-    return fetch(carUrl + '/' + id, {
+const editCar = (car) => {
+    return fetch(carUrl + '/' + car.id, {
         method: 'PUT',
-        body: JSON.stringify({
-            model: model,
-            price: price,
-            year: year
-        }),
+        body: JSON.stringify(car),
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
         },
-    }).then(() => getCars())
+    })        .then((response) => response.json())
+        .then((json) => json);
 }
 
 
