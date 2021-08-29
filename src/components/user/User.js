@@ -7,10 +7,13 @@ import {
 } from "react-router-dom";
 
 
-export default function User({eachUser}) {
+export default function User({eachUser, history}) {
+    let navigate = () => {
+        history.push('/user-page/' + eachUser.id, eachUser)
+    }
   return (
     <div>
-        {eachUser.name} - <Link to={{pathname: '/user-page/' + eachUser.id, state: eachUser}}>user details</Link>
+        {eachUser.name} - <button onClick={navigate}>user details</button>
 
     </div>
   );
