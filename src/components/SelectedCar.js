@@ -1,13 +1,17 @@
-export default function SelectedCar({eachCar}) {
+import {useState} from "react";
+
+export default function SelectedCar({eachCar, editCarButton}) {
+
+    const onClickEdit = () => {
+        console.log(eachCar)
+        editCarButton(eachCar);
+
+    }
 
     return (
         <div>
-            {eachCar.model} {eachCar.price}
-            <form>
-            <input type="text" name={'model'} value={eachCar.model}/>
-            <input type="text" name={'model'} value={eachCar.price}/>
-            <button>UPDATE</button>
-            </form>
+
+
         </div>
     );
 }

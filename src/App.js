@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import Cars from "./components/Cars";
 import Form from "./components/Form";
-import Form2 from "./components/Form2";
 import SelectedCars from "./components/SelectedCars";
 
 export default function App() {
