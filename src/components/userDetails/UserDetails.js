@@ -16,7 +16,7 @@ export default function UserDetails({location:state, match:{params:{id}}}) {
       name: {user.name}
       <br/>
       email: {user.email}
-<Address {...address}/>
+<Address address={'address'}/>
     </div>
   );
 }
