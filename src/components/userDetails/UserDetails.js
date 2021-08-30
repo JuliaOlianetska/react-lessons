@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import {getUser} from "../../services/services";
 import Address from "../Address";
 
-export default function UserDetails({location:state, match:{params:{id}}}) {
+export default function UserDetails({location:state, match:{params:{id}}, address, company}) {
   console.log(id);
 
   let [user, setUser] = useState([]);
@@ -16,7 +16,7 @@ export default function UserDetails({location:state, match:{params:{id}}}) {
       name: {user.name}
       <br/>
       email: {user.email}
-<Address address={'address'}/>
+<Address {...address}/>
     </div>
   );
 }
