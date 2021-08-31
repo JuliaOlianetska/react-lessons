@@ -1,69 +1,54 @@
 import {useEffect, useState} from "react";
-import {getCars} from "../services";
+import {editCar, getCars} from "../services";
 import SelectedCar from "./SelectedCar";
 
 export default function SelectedCars() {
 
     let [cars, setCars] = useState([]);
+    let [car, setCar] = useState({});
     let [value, setValue] = useState('')
-    let [model, setModel] = useState('');
-    let [price, setPrice] = useState('');
-    let [year, setYear] = useState('');
+
+    let [formData, setFormData] = useState({model: '', price: '', year: ''});
 
 
+    let onChange = ({target: {value, name}}) => setFormData({...formData, [name]: value})
 
-    let onModelChange = (e) => {
-        setModel(e.target.value)
-        console.log(e.target.value)
-    }
-    let onPriceChange = (e) => {
-        setPrice(e.target.value)
-        console.log(e.target.value)
-    }
-    let onYearChange = (e) => {
-        setYear(e.target.value)
-        console.log(e.target.value)
-    }
-    useEffect(()=> {
+
+    useEffect(() => {
         getCars().then(value => setCars([...value]))
-    },[])
+    }, [])
 
 
-const changeSelectValue = (e) => {
-        setValue(e.target.value)
-
-}
-    const editCarButton = (eachCar) => {
-        setModel(eachCar.model)
-        setPrice(eachCar.price)
-        setYear(eachCar.year)
-        console.log({...eachCar})
+    const changeSelectValue = (e) => {
+        const car = cars.find(car => +e.target.value === car.id)
+        console.log(car)
+        setFormData(car)
     }
 
-  return (
-    <div>
-        <form>
-        <select value={value} onChange={changeSelectValue}>
+    useEffect(() => {
+        editCar().then (value => setCar ({...value}))
+            }, [])
 
-                {
-                    cars.map((eachCar) => <option key={eachCar.id} value={eachCar.id}>{eachCar.id} {eachCar.model}, {eachCar.price} USD, {eachCar.year} year
-                    </option>
-                    )}
-        </select>
+    return (
+        <div>
+            <form>
+                <select value={value} onChange={changeSelectValue}>
+                    {
+                        cars.map((eachCar) => <option key={eachCar.id}
+                                                      value={eachCar.id}>{eachCar.id} {eachCar.model}, {eachCar.price} USD, {eachCar.year} year
+                            </option>
+                        )}
+                </select>
+            </form>
 
-    </form>
-        {
-        cars.map(eachCar => <SelectedCar eachCar={eachCar} editCarButton={editCarButton}/>)
-    }
-        <button onClick={editCarButton}>EDIT</button>
-        <form>
-            <input type="text" name={'model'} value={model} onChange={onModelChange}/>
-            <input type="number" name={'price'} value={price} onChange={onPriceChange}/>
-            <input type="number" name={'year'} value={year} onChange={onYearChange}/>
-            <button>UPDATE</button>
-        </form>
+            <form>
+                <input type="text" name={'model'} value={formData.model} onChange={onChange}/>
+                <input type="number" name={'price'} value={formData.price} onChange={onChange}/>
+                <input type="number" name={'year'} value={formData.year} onChange={onChange}/>
+                <button>UPDATE</button>
+            </form>
 
 
-    </div>
-  );
+        </div>
+    );
 }
