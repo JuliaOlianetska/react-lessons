@@ -8,17 +8,17 @@ import {
 
 
 import Users from "./components/users/Users";
-import StaticUserDetails from "./components/staticUserDetails/StaticUserDetails";
+
 
 export default function App() {
   return (
 
       <Router>
         <div>
-<Link to={'/user-page'}>user page</Link>
+<Link to={'/users-page'}>users page</Link>
 
         </div>
-        <Route path={'/user-page'} component={Users}/>
+        <Route path={'/users-page'} component={Users}/>
 
       </Router>
   );

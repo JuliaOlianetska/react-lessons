@@ -9,7 +9,7 @@ import {
 
 export default function User({eachUser, history}) {
     let navigate = () => {
-        history.push('/user-page/' + eachUser.id, eachUser)
+        history.push('/users-page/' + eachUser.id, eachUser)
     }
   return (
     <div>
