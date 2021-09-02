@@ -6,10 +6,12 @@ import {
       withRouter
 } from "react-router-dom";
 
-export default function Post({eachPost}) {
-  return (
+export default function Post({onePost}) {
+    console.log(onePost);
+    return (
     <div>
-     post
+
+        {onePost.title} - <Link to={'/post-details/'}>post details</Link>
     </div>
   );
 }

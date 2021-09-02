@@ -1,25 +1,20 @@
 import {useEffect, useState} from "react";
 import {getPostsOfUser} from "../../services/services";
 import Post from "../post/Post";
+import {Link} from "react-router-dom";
 
-export default function Posts(props) {
-  console.log(props);
-  let {match:{url}, history}=props;
+export default function Posts({eachPost}) {
+  console.log(eachPost);
 
-
-  let [user, setUser] = useState({});
   let [posts, setPosts] = useState([]);
-let [post, setPost] = useState({});
-
-  useEffect(() => {
-    getPostsOfUser().then(value => console.log(value))
-  }, [])
-
 
   return (
     <div>
-      {posts.map(eachPost=> <Post eachPost={eachPost}/>)}
+      <p>Posts titles:</p>
+      {
+        eachPost.map(onePost => <Post onePost={onePost}/>)
 
+      }
     </div>
   );
 }

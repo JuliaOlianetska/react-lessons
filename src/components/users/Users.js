@@ -1,9 +1,17 @@
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+    withRouter
+} from "react-router-dom";
 import {useEffect, useState} from "react";
 import User from "../user/User";
 import {getUsers} from "../../services/services";
-import {Route} from "react-router-dom";
-import {logDOM} from "@testing-library/react";
+
+
 import UserDetails from "../userDetails/UserDetails";
+import Posts from "../posts/Posts";
 
 export default function Users(props) {
     console.log(props);
