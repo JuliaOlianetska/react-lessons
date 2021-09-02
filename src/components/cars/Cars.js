@@ -61,11 +61,17 @@ const carButtonDelete = (id) => {
 
 }
 
+    let saveEditedCar = (e) => {
+        console.log(car)
+        editCar(car).then(value => console.log(value))
 
+    }
+
+/*
         let carToEdit = {model: e.target.model.value || car.model, price: e.target.price.value || car.price, year: e.target.year.value || car.year, id: car.id}
     console.log(carToEdit)
     editCar(carToEdit)
-
+*/
 
 
   return (
@@ -77,9 +83,10 @@ const carButtonDelete = (id) => {
               <button>SAVE</button>
 
           </form>
+          <button onClick={saveEditedCar}>SUBMIT</button>
           <div className={'all-cars'}>
               {
-                  cars.map(oneCar => <Car key={oneCar.id} oneCar={oneCar} carButtonDelete={carButtonDelete}
+                  cars.map(oneCar => <Car key={oneCar.id} oneCar={oneCar} setCar={setCar} carButtonDelete={carButtonDelete}
                                           carButtonEdit={carButtonEdit}/>)
               }
 

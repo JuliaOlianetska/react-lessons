@@ -1,7 +1,7 @@
 import "../style.css"
 
 
-export default function Car({oneCar, carButtonDelete, carButtonEdit}) {
+export default function Car({oneCar, setCar, carButtonDelete, carButtonEdit}) {
 
     const onClickDelete = () => {
         carButtonDelete(oneCar.id);
@@ -10,6 +10,7 @@ export default function Car({oneCar, carButtonDelete, carButtonEdit}) {
 const onClickEdit = () => {
 console.log(oneCar)
         carButtonEdit(oneCar);
+setCar(oneCar);
 }
 
 
