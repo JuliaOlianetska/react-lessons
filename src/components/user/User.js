@@ -28,7 +28,8 @@ export default function User({eachUser, history}) {
   return (
     <div>
         {eachUser.name} - <button onClick={navigate}>user details</button>
-        <Posts/>
+        <p>Posts titles:</p>
+        <Posts eachPost={posts}/>
 
 
     </div>

@@ -10,7 +10,6 @@ export default function Post({onePost}) {
     console.log(onePost);
     return (
     <div>
-
         {onePost.title} - <Link to={'/post-details/'}>post details</Link>
     </div>
   );
