@@ -10,9 +10,10 @@ const getUser = (id) => {
         .then(value => value.json())
 }
 
-const getPostsOfUser = () => {
+const getPostsOfUser = (id) => {
     return fetch('https://jsonplaceholder.typicode.com/users/' + id + '/posts')
         .then(value => value.json())
+
 
 }
 
