@@ -8,7 +8,7 @@ export default function SelectedCars() {
     let [car, setCar] = useState({});
     let [value, setValue] = useState('')
 
-    let [formData, setFormData] = useState({model: '', price: '', year: ''});
+    let [formData, setFormData] = useState({id: '', model: '', price: '', year: ''});
 
 
     let onChange = ({target: {value, name}}) => setFormData({...formData, [name]: value})
@@ -33,8 +33,8 @@ export default function SelectedCars() {
 
     const updateCar = (e) => {
         e.preventDefault();
-        let newCar = formData;
-        editCar(car).then(value => value);
+        let newCar = {...formData};
+        editCar(car).then(value => setCar({...value}));
 console.log(newCar)
     }
 
@@ -47,6 +47,7 @@ console.log(newCar)
                                                       value={eachCar.id}>{eachCar.id} {eachCar.model}, {eachCar.price} USD, {eachCar.year} year
                             </option>
                         )}
+                    <SelectedCar setCar={setCar}/>
                 </select>
             </form>
 
