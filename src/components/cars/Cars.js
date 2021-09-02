@@ -26,13 +26,6 @@ export default function Cars() {
 
         }
 
-
-
-
-
-
-
-
     let onModelChange =(e) => {
         console.log(e.target.value);
         setModel(e.target.value);
@@ -54,16 +47,19 @@ const carButtonDelete = (id) => {
 }
 
 
-    const carButtonEdit = (oneCar) => {
-        setModel(oneCar.model)
-        setPrice(oneCar.price)
-        setYear(oneCar.year)
+    const carButtonEdit = (obj) => {
+        console.log(obj)
+        setModel(obj.model)
+        setPrice(obj.price)
+        setYear(obj.year)
 
 }
 
     let saveEditedCar = (e) => {
-        console.log(car)
-        editCar(car).then(value => console.log(value))
+        let onCar = {
+            model, price, year, id: car}
+        console.log(onCar)
+        editCar(onCar).then(value => setCar({...value}))
 
     }
 

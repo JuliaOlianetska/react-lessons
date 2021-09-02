@@ -10,7 +10,7 @@ export default function Car({oneCar, setCar, carButtonDelete, carButtonEdit}) {
 const onClickEdit = () => {
 console.log(oneCar)
         carButtonEdit(oneCar);
-setCar(oneCar);
+
 }
 
 
@@ -19,7 +19,7 @@ setCar(oneCar);
             <p>{oneCar.id} -- {oneCar.model}</p>
             <p>{oneCar.year} year, {oneCar.price} USD</p>
             <button onClick={onClickDelete}>delete</button>
-            <button onClick={onClickEdit}>edit</button>
+            <button onClick={()=> {onClickEdit(oneCar); setCar(oneCar.id)}}>edit</button>
 
         </div>
     );
