@@ -29,7 +29,7 @@ export default function User({eachUser, history}) {
     <div>
         {eachUser.name} - <button onClick={navigate}>user details</button>
         <p>Posts titles:</p>
-        <Posts eachPost={posts}/>
+        <Posts posts={posts}/>
 
 
     </div>
