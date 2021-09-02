@@ -1,7 +1,6 @@
 import {useEffect, useState} from "react";
 import User from "../user/User";
 import {getUsers} from "../../services/services";
-import StaticUserDetails from "../staticUserDetails/StaticUserDetails";
 import {Route} from "react-router-dom";
 import {logDOM} from "@testing-library/react";
 import UserDetails from "../userDetails/UserDetails";
