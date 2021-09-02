@@ -3,8 +3,8 @@ import {getPostsOfUser} from "../../services/services";
 import Post from "../post/Post";
 import {Link} from "react-router-dom";
 
-export default function Posts({eachPost}) {
-  console.log(eachPost);
+export default function Posts() {
+ ;
 
   let [posts, setPosts] = useState([]);
 
@@ -12,8 +12,7 @@ export default function Posts({eachPost}) {
     <div>
       <p>Posts titles:</p>
       {
-        eachPost.map(onePost => <Post onePost={onePost}/>)
-
+        posts.map(onePost => <Post onePost={onePost}/>)
       }
     </div>
   );

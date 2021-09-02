@@ -18,7 +18,7 @@ export default function User({eachUser, history}) {
         history.push('/users-page/' + eachUser.id, eachUser)
     }
     let [posts, setPosts] = useState([]);
-    let [post, setPost] = useState({});
+
 
     useEffect(() => {
         getPostsOfUser(eachUser.id).then(value => setPosts([value]))
@@ -28,19 +28,7 @@ export default function User({eachUser, history}) {
   return (
     <div>
         {eachUser.name} - <button onClick={navigate}>user details</button>
-        {posts.map(eachPost=> <Posts eachPost={eachPost}/>)}
-
-        <Router>
-            <div>
-                <Link to={'/user-page/' + eachUser.id + '/posts/'}>posts</Link>
-            </div>
-        </Router>
-        <Route path={'/user-page/' + eachUser.id + '/posts/'} render={()=>{return <Posts eachPost={'eachPost'}/>}}/>
-
-
-
-
-
+        <Posts/>
 
 
     </div>
