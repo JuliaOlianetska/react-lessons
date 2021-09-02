@@ -18,21 +18,14 @@ const createCar = (car) => {
         .then((json) => console.log(json));
 }
 
-const editCar = (id, model, price, year) => {
-   return fetch(urlCars + '/' + id, {
+const editCar = (car) => {
+   return fetch(urlCars + '/' + car.id, {
         method: 'PUT',
-        body: JSON.stringify({
-            id: id,
-            model: model,
-            price: price,
-            year: year,
-        }),
+        body: JSON.stringify(car),
         headers: {
             'Content-type': 'application/json; charset=UTF-8',
         },
-    })
-        .then((response) => response.json())
-
+    }).then(() => getCars());
 }
 
 export {getCars,createCar, editCar};

@@ -25,9 +25,18 @@ export default function SelectedCars() {
         setFormData(car)
     }
 
+    /*
     useEffect(() => {
         editCar().then (value => setCar ({...value}))
             }, [])
+*/
+
+    const updateCar = (e) => {
+        e.preventDefault();
+        let newCar = formData;
+        editCar(car).then(value => value);
+console.log(newCar)
+    }
 
     return (
         <div>
@@ -45,7 +54,8 @@ export default function SelectedCars() {
                 <input type="text" name={'model'} value={formData.model} onChange={onChange}/>
                 <input type="number" name={'price'} value={formData.price} onChange={onChange}/>
                 <input type="number" name={'year'} value={formData.year} onChange={onChange}/>
-                <button>UPDATE</button>
+                <button onClick={updateCar}>UPDATE</button>
+
             </form>
 
 
