@@ -77,9 +77,9 @@ const carButtonDelete = (id) => {
               <input type="number" name={'price'} value={price} onChange={onPriceChange}/>
               <input type="number" name={'year'} value={year} onChange={onYearChange}/>
               <button>SAVE</button>
-
+              <button onClick={saveEditedCar}>SUBMIT</button>
           </form>
-          <button onClick={saveEditedCar}>SUBMIT</button>
+
           <div className={'all-cars'}>
               {
                   cars.map(oneCar => <Car key={oneCar.id} oneCar={oneCar} setCar={setCar} carButtonDelete={carButtonDelete}
