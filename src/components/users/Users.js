@@ -11,7 +11,7 @@ import {getUsers} from "../../services/services";
 
 
 import UserDetails from "../userDetails/UserDetails";
-import Posts from "../posts/Posts";
+
 
 export default function Users(props) {
     console.log(props);
@@ -31,6 +31,7 @@ export default function Users(props) {
             console.log(props);
 
             return <UserDetails {...props}/>}}/>
+
     </div>
   );
 }

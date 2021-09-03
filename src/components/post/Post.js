@@ -7,10 +7,9 @@ import {
 } from "react-router-dom";
 
 export default function Post({onePost}) {
-    console.log(onePost);
     return (
     <div>
-        {onePost.title} - <Link to={'/post-details/'}>post details</Link>
+        {onePost.title} - <Link to={{pathname:'/posts-page/' + onePost.id, state:onePost}}>post details</Link>
     </div>
   );
 }
